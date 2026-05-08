@@ -31,7 +31,7 @@ const categoryLabels = {
 
 export function ScenarioSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
-  const { state, dispatch } = useApp();
+  const { dispatch } = useApp();
   const location = useLocation();
   const [activeScenario, setActiveScenario] = useState<string>('happy');
 

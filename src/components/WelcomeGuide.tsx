@@ -45,7 +45,6 @@ export function WelcomeGuide() {
   const { state, dispatch } = useApp();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDismissing, setIsDismissing] = useState(false);
-  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('left');
 
   if (state.hasSeenWelcome) return null;
 
@@ -60,14 +59,12 @@ export function WelcomeGuide() {
     if (currentSlide === slides.length - 1) {
       handleDismiss();
     } else {
-      setSlideDirection('left');
       setCurrentSlide(prev => prev + 1);
     }
   };
 
   const handleBack = () => {
     if (currentSlide > 0) {
-      setSlideDirection('right');
       setCurrentSlide(prev => prev - 1);
     }
   };

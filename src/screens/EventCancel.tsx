@@ -7,7 +7,7 @@ import { useState } from 'react';
 export function EventCancel() {
   const { eventId } = useParams();
   const navigate = useNavigate();
-  const { state, dispatch } = useApp();
+  const { dispatch } = useApp();
   const event = mockEvents.find(e => e.id === eventId);
   const [cancelled, setCancelled] = useState(false);
 
